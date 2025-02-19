@@ -98,7 +98,7 @@ if st.session_state.get("show_form", False):
 
     if st.button("Submit"):
         if st.session_state.studentId and st.session_state.newclass:
-            url = "http://127.0.0.1:5000/add-new-class-by-student"
+            url = str(BASE_URL+"/add-new-class-by-student")
             payload = {
                 "studentId": st.session_state.studentId,
                 "newClass": st.session_state.newclass
@@ -122,7 +122,7 @@ if st.session_state.get("show_change_class_form", False):
 
     if st.button("Submit"):
         if st.session_state.studentId and st.session_state.oldclass and st.session_state.newclass:
-            url = "http://localhost:5000/change-class-by-student"
+            url = str(BASE_URL+"/change-class-by-student")
             payload = {
                 "studentId": st.session_state.studentId,
                 "oldClass": st.session_state.oldclass,
